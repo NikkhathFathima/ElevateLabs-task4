@@ -8,7 +8,7 @@ This project demonstrates a basic responsive website built with HTML and CSS. It
 * *Engaging Hero Section:* A prominent introductory area with a call-to-action button.
 * *Three-Column Layout:* A feature section designed to display content in columns on wider screens and stack vertically on smaller screens using CSS Flexbox.
 * *Placeholder Images:* Uses via.placeholder.com for dynamic image content.
-*## Technologies Used
+## Technologies Used
 
 * *HTML5:* For the structure and content of the webpage.
 * *CSS3:* For styling and layout, including responsive design with Flexbox and Media Queries.
