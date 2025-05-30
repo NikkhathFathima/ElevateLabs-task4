@@ -1,0 +1,209 @@
+/* style.css */
+
+/* =========================================== */
+/* BASE STYLES (FOR DESKTOP / LARGER SCREENS)*/
+/* These styles apply by default to all screen sizes */
+/* =========================================== */
+
+/* Universal Box-Sizing for easier layout */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Site Header */
+header { /* Removed .site-header as it's not in HTML */
+    background-color: #333;
+    color: white;
+    text-align: center;
+    display: flex; /* Use flexbox for desktop header */
+    justify-content: space-between; /* Space items */
+    align-items: center; /* Vertically center */
+    padding: 0 40px; /* Add some padding */
+}
+header h1 { /* Matches header > h1 in HTML */
+    margin: 0;
+    font-size: 2em;
+}
+
+/* Main Navigation */
+nav ul { /* Matches nav > ul in HTML */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Horizontal nav items for desktop */
+}
+nav li { /* Matches nav > ul > li in HTML */
+    margin-left: 20px;
+}
+nav a { /* Matches nav > ul > li > a in HTML */
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px; /* Default padding for desktop nav links */
+    display: block; /* Make link fill space */
+}
+nav a:hover { /* Matches nav > ul > li > a on hover */
+  background-color: #555;
+}
+
+/* Container */
+.container { /* Matches div class="container" in HTML */
+    max-width: 1200px; /* Max width for desktop content */
+    margin: 20px auto; /* Center on desktop */
+    padding: 0 20px; /* Default padding */
+    background-color: white; /* Added based on earlier full CSS */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Added based on earlier full CSS */
+    border-radius: 8px; /* Added based on earlier full CSS */
+}
+
+/* Hero Section */
+.hero-section { /* Matches section class="hero-section" in HTML */
+    background-color: #007bff;
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+.hero-section h1 { /* Matches .hero-section > h1 in HTML */
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+.hero-section p { /* Matches .hero-section > p in HTML */
+    font-size: 1.2em;
+    max-width: 800px;
+    margin: 0 auto;
+}
+.hero-section button { /* Matches button inside .hero-section */
+    background-color: #28a745;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 20px;
+}
+
+/* Columns Section */
+.columns { /* Matches section class="columns" in HTML */
+    display: flex; /* Use flexbox for desktop columns */
+    flex-wrap: wrap;
+    gap: 20px; /* Space between columns */
+}
+.column { /* Matches div class="column" in HTML */
+    flex: 1; /* Each column takes equal space */
+    min-width: 300px; /* Minimum width before wrapping */
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+.column img { /* Matches img inside .column */
+    max-width: 100%; /* Make images responsive by default */
+    height: auto;
+    display: block;
+    margin-bottom: 15px;
+}
+.column h2 { /* Matches h2 inside .column */
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #007bff;
+}
+.column p { /* Matches p inside .column */
+    font-size: 1em;
+    margin-bottom: 0;
+}
+
+
+/* Footer */
+footer { /* Matches footer tag in HTML */
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+
+/* =========================================== */
+/* MEDIA QUERIES (FOR SMALLER SCREENS)       */
+/* These styles OVERRIDE base styles for specific screen sizes */
+/* =========================================== */
+
+/* For screens smaller than or equal to 768px (common breakpoint for tablets/laptops) */
+@media screen and (max-width: 768px) {
+    /* Mobile-specific adjustments */
+
+    header {
+        flex-direction: column; /* Stack header content */
+        padding: 15px; /* Adjust padding for mobile */
+    }
+    header h1 { /* Matches header > h1 */
+        margin-bottom: 15px;
+        font-size: 2.2em;
+    }
+    nav ul { /* Matches nav > ul */
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+        width: 100%;
+    }
+    nav li { /* Matches nav > ul > li */
+        margin: 5px 0;
+        width: 90%;
+        text-align: center;
+    }
+    nav a { /* Matches nav > ul > li > a */
+        padding: 10px;
+        display: block;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    nav li:last-child a {
+        border-bottom: none;
+    }
+
+    .container { /* Matches div class="container" */
+        margin: 10px auto;
+        padding: 0 10px;
+    }
+    .hero-section { /* Matches section class="hero-section" */
+        padding: 30px 15px;
+    }
+    .hero-section h1 { /* Matches .hero-section > h1 */
+        font-size: 2em;
+    }
+    .hero-section p { /* Matches .hero-section > p */
+        font-size: 1em;
+    }
+
+    .columns { /* Matches section class="columns" */
+        flex-direction: column;
+        gap: 15px;
+    }
+    .column { /* Matches div class="column" */
+        min-width: unset;
+        width: 100%;
+        padding: 15px;
+    }
+
+    /* General adjustments for smaller fonts in mobile */
+    h2 { /* Apply to all h2s if not more specific rules apply */
+        font-size: 1.5em;
+    }
+    p { /* Apply to all p tags */
+        font-size: 0.95em;
+    }
+
+    footer {
+        padding: 15px;
+        font-size: 0.9em;
+    }
+}
